@@ -22,7 +22,7 @@
       }
     </style>
     <script src="angular.min.js"></script>
-    <script src="app_factory.js"></script>
+    <script src="app0.js"></script>
   </head>
 <body>
   <div class="container">
@@ -32,24 +32,28 @@
 
     <!-- To Buy List -->
     <div class="col-md-6">
-    <div ng-controller='ToBuyController as showList'>
+    <div ng-controller='ToBuyController as showListtobuy'>
      <h2>To Buy:</h2>
      <ul>
-         <li ng-repeat="item in showList.itemstobuy">
-            Buy {{ item.quantity }} of {{ item.name }}   <button ng-click="showList.update($index);">buy Item</button>
+         <li ng-repeat="item in showListtobuy.itemstobuy">
+            Buy {{ item.quantity }} of {{ item.name }}   <button ng-click="showListtobuy.update($index);">buy Item</button>
          </li>
      </ul>
-     <div ng-if="showList.itemstobuy.length==0" class="emptyMessage">Everything is bought!</div>
+     <div ng-if="showListtobuy.itemstobuy.length==0" class="emptyMessage">Everything is bought!</div>
+     </div>
+    </div>
 
     <!-- Already Bought List -->
+    <div class="col-md-6">
+    <div ng-controller='AlreadyBoughtController as showListbought '>
       <h2>Already Bought:</h2>
      <ul>
-        <li ng-repeat="item in showList.itemsbought">
+        <li ng-repeat="item in showListbought.itemsbought">
             Bought {{ item.quantity }} of {{ item.name }}
         </li>
     </ul>
 
-     <div ng-if="showList.itemsbought.length==0" class="emptyMessage">Nothing bought yet.</div>
+     <div ng-if="showListbought.itemsbought.length==0" class="emptyMessage">Nothing bought yet.</div>
     </div>
     </div>
   </div>
