@@ -13,6 +13,8 @@ function ToBuyController(ShoppingListFactory) {
   console.log("ToBuyController contenu de ShoppingList",ShoppingList) ;
   showList.itemstobuy = ShoppingList.getItemstobuy();
  console.log("ToBuyController contenu de  showList.itemstobuy ",showList.itemstobuy) ;
+  showList.itemsbought = ShoppingList.getItemsbought();
+  console.log("ToBuyController contenu de  showList.itemsbought ",showList.itemsbought) ;
 
   showList.update = function (itemIndex) {
   console.log("appel de update() ") ;
